@@ -19,6 +19,9 @@ app.use("/api/users", userRoutes);
 
 app.use(express.static(path.join(dirname + "/frontend/dist")));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(dirname + "/frontend/dist/index.html"));
+});
 server.listen(PORT, () => {
   console.log(`server started on port ${PORT}`), connect();
 });
