@@ -55,7 +55,7 @@ module.exports = {
         user?.password || ""
       );
       if (!user || !isPasswordCorrect) {
-        return res.status(400).json({ message: "Invalid credentials" });
+        return res.status(400).json({ error: "Invalid Username or Password" });
       }
 
       generateTokenAndSetCookie(user._id, res);
